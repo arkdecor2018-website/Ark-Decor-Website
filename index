@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARK DECOR - Luxury Lighting & Jhumars</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="light-beam"></div>
+            <h1 class="loading-text">ARK DECOR</h1>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                <span>ARK DECOR</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#collection" class="nav-link">Collection</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="icon-btn cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <button class="close-search" id="closeSearch">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="search-container">
+            <input type="text" placeholder="Search for luxury lighting..." class="search-input" id="searchInput">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="floating-light light-1"></div>
+            <div class="floating-light light-2"></div>
+            <div class="floating-light light-3"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Illuminate Your</span>
+                <span class="title-line">Living Space</span>
+            </h1>
+            <p class="hero-subtitle">Discover our exclusive collection of handcrafted luxury jhumars and designer lighting</p>
+            <div class="hero-buttons">
+                <a href="#collection" class="btn btn-primary">
+                    <span>Explore Collection</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Get in Touch</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll to explore</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Handcrafted with finest materials</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick & secure shipping worldwide</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Expert assistance anytime</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Warranty</h3>
+                    <p>2-year comprehensive warranty</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section class="collection" id="collection">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Collection</span>
+                <h2 class="section-title">Exclusive Luxury Lighting</h2>
+                <p class="section-description">Handpicked collection of premium jhumars and designer lights</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="chandelier">Chandeliers</button>
+                <button class="filter-btn" data-filter="jhumar">Jhumars</button>
+                <button class="filter-btn" data-filter="pendant">Pendant Lights</button>
+                <button class="filter-btn" data-filter="wall">Wall Lights</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="chandelier">
+                    <div class="product-badge">Premium</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=600&h=600&fit=crop" alt="Crystal Chandelier">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openQuickView(0)">
+                                <i class="fas fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Royal Crystal Chandelier</h3>
+                        <p class="product-description">Magnificent 12-light crystal chandelier</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price">₹85,999</span>
+                                <span class="price-old">₹1,05,999</span>
+                            </div>
+                            <button class="btn-buy" onclick="buyNow('Royal Crystal Chandelier', '85999')">
+                                <i class="fab fa-whatsapp"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="jhumar">
+                    <div class="product-badge hot">Hot</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&h=600&fit=crop" alt="Golden Jhumar">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openQuickView(1)">
+                                <i class="fas fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Maharaja Golden Jhumar</h3>
+                        <p class="product-description">Traditional brass & gold plated jhumar</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price">₹1,25,999</span>
+                                <span class="price-old">₹1,55,999</span>
+                            </div>
+                            <button class="btn-buy" onclick="buyNow('Maharaja Golden Jhumar', '125999')">
+                                <i class="fab fa-whatsapp"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="pendant">
+                    <div class="product-badge new">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=600&h=600&fit=crop" alt="Modern Pendant">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openQuickView(2)">
+                                <i class="fas fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Modern Glass Pendant</h3>
+                        <p class="product-description">Contemporary designer pendant light</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price">₹12,499</span>
+                                <span class="price-old">₹18,999</span>
+                            </div>
+                            <button class="btn-buy" onclick="buyNow('Modern Glass Pendant', '12499')">
+                                <i class="fab fa-whatsapp"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="chandelier">
+                    <div class="product-badge">Premium</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1534406113292-8d2c0f00d924?w=600&h=600&fit=crop" alt="Classic Chandelier">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openQuickView(3)">
+                                <i class="fas fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Classic French Chandelier</h3>
+                        <p class="product-description">Elegant 8-light vintage chandelier</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price">₹65,999</span>
+                                <span class="price-old">₹85,999</span>
+                            </div>
+                            <button class="btn-buy" onclick="buyNow('Classic French Chandelier', '65999')">
+                                <i class="fab fa-whatsapp"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="wall">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&h=600&fit=crop" alt="Wall Sconce">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openQuickView(4)">
+                                <i class="fas fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Sconce</h3>
+                        <p class="product-description">Crystal & brass wall light fixture</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price">₹8,999</span>
+                                <span class="price-old">₹12,999</span>
+                            </div>
+                            <button class="btn-buy" onclick="buyNow('Luxury Wall Sconce', '8999')">
+                                <i class="fab fa-whatsapp"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="jhumar">
+                    <div class="product-badge hot">Hot</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=600&h=600&fit=crop" alt="Diamond Jhumar">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openQuickView(5)">
+                                <i class="fas fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Diamond Cut Jhumar</h3>
+                        <p class="product-description">Premium crystal jhumar with LED</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price">₹95,999</span>
+                                <span class="price-old">₹1,25,999</span>
+                            </div>
+                            <button class="btn-buy" onclick="buyNow('Diamond Cut Jhumar', '95999')">
+                                <i class="fab fa-whatsapp"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card" data-category="pendant">
+                    <div class="product-badge new">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?w=600&h=600&fit=crop" alt="Industrial Pendant">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openQuickView(6)">
+                                <i class="fas fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Industrial Pendant Set</h3>
+                        <p class="product-description">Set of 3 industrial style pendants</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price">₹18,999</span>
+                                <span class="price-old">₹25,999</span>
+                            </div>
+                            <button class="btn-buy" onclick="buyNow('Industrial Pendant Set', '18999')">
+                                <i class="fab fa-whatsapp"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card" data-category="chandelier">
+                    <div class="product-badge">Premium</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1567225477277-c1b0e3d0b19f?w=600&h=600&fit=crop" alt="Modern Chandelier">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn" onclick="openQuickView(7)">
+                                <i class="fas fa-eye"></i> Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Contemporary LED Chandelier</h3>
+                        <p class="product-description">Smart LED ring chandelier</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price">₹45,999</span>
+                                <span class="price-old">₹65,999</span>
+                            </div>
+                            <button class="btn-buy" onclick="buyNow('Contemporary LED Chandelier', '45999')">
+                                <i class="fab fa-whatsapp"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-overlay" onclick="closeQuickView()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeQuickView()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div class="modal-rating" id="modalRating"></div>
+                    <div class="modal-price">
+                        <span class="price" id="modalPrice"></span>
+                        <span class="price-old" id="modalOldPrice"></span>
+                    </div>
+                    <div class="product-details">
+                        <h4>Product Details:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Premium quality materials</li>
+                            <li><i class="fas fa-check"></i> Energy efficient LED compatible</li>
+                            <li><i class="fas fa-check"></i> Easy installation</li>
+                            <li><i class="fas fa-check"></i> 2-year warranty included</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-primary btn-large" id="modalBuyBtn">
+                        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop" alt="ARK Decor Showroom">
+                    <div class="about-experience">
+                        <h3>15+</h3>
+                        <p>Years of Excellence</p>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-subtitle">About Us</span>
+                    <h2 class="section-title">Crafting Elegance Since 2008</h2>
+                    <p class="about-text">
+                        At ARK DECOR, we believe that lighting is not just about illumination—it's about creating an ambiance, 
+                        setting a mood, and transforming spaces into extraordinary experiences. With over 15 years of expertise 
+                        in luxury lighting, we curate the finest collection of chandeliers, jhumars, and designer lights.
+                    </p>
+                    <p class="about-text">
+                        Each piece in our collection is carefully selected and crafted to perfection, combining traditional 
+                        craftsmanship with contemporary design. We work with master artisans and leading designers to bring 
+                        you lighting solutions that are both functional and artistic.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>5000+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Products</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Cities Served</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Testimonials</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Absolutely stunning! The Royal Crystal Chandelier transformed our living room into a palace. 
+                        The quality is exceptional and the customer service was outstanding."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/100?img=1" alt="Rajesh Kumar">
+                        <div>
+                            <h4>Rajesh Kumar</h4>
+                            <p>Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Best investment for our new home! The Maharaja Golden Jhumar is a masterpiece. 
+                        Everyone who visits compliments it. Highly recommend ARK DECOR!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/100?img=5" alt="Priya Sharma">
+                        <div>
+                            <h4>Priya Sharma</h4>
+                            <p>Delhi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Professional service from start to finish. The installation was smooth and the lighting 
+                        solutions they provided exceeded our expectations. Worth every penny!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://i.pravatar.cc/100?img=8" alt="Amit Patel">
+                        <div>
+                            <h4>Amit Patel</h4>
+                            <p>Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-subtitle">Get in Touch</span>
+                    <h2 class="section-title">Let's Illuminate Your Space</h2>
+                    <p class="contact-text">
+                        Have questions about our products? Need custom lighting solutions? 
+                        Our team is here to help you find the perfect lighting for your space.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 98765 43210</p>
+                                <p>+91 98765 43211</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@arkdecor.com</p>
+                                <p>sales@arkdecor.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Showroom</h4>
+                                <p>123, Luxury Plaza,</p>
+                                <p>MG Road, Mumbai - 400001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Mon - Sat: 10:00 AM - 8:00 PM</p>
+                                <p>Sunday: 11:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone" required>
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Interest</option>
+                                <option value="chandelier">Chandeliers</option>
+                                <option value="jhumar">Jhumars</option>
+                                <option value="pendant">Pendant Lights</option>
+                                <option value="wall">Wall Lights</option>
+                                <option value="custom">Custom Solution</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-gem"></i>
+                        <span>ARK DECOR</span>
+                    </div>
+                    <p class="footer-description">
+                        Your trusted partner in luxury lighting solutions. 
+                        Transforming spaces with elegance and brilliance since 2008.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#collection">Collection</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Chandeliers</a></li>
+                        <li><a href="#">Jhumars</a></li>
+                        <li><a href="#">Pendant Lights</a></li>
+                        <li><a href="#">Wall Lights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates on new arrivals and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ARK DECOR. All rights reserved. | Designed with <i class="fas fa-heart"></i> for luxury</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
